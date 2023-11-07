@@ -18,6 +18,7 @@ func decodeBencode(bencodedString string) (interface{}, error) {
 				break
 			}
 		}
+
 		lengthStr := bencodedString[:firstColonIndex]
 		length, err := strconv.Atoi(lengthStr)
 		if err != nil {
@@ -30,7 +31,6 @@ func decodeBencode(bencodedString string) (interface{}, error) {
 }
 
 func main() {
-	fmt.Println("Logs from your program will appear here!")
 	command := os.Args[1]
 	if command == "decode" {
 		bencodedValue := os.Args[2]
